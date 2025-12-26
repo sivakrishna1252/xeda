@@ -14,33 +14,27 @@ pipeline {
 
         }
  
-        /* ======================
-
-           BACKEND (DJANGO + PM2)
-
-        ====================== */
-
         stage('Backend: Setup Virtualenv & Install Dependencies') {
 
             steps {
 
                 sh '''
 
-                  echo "=== Setting up backend virtualenv ==="
+                    echo "=== Setting up backend virtualenv ==="
 
-                  cd backend
+                    cd backend
  
-                  if [ ! -d "venv" ]; then
+                    if [ ! -d "venv" ]; then
 
-                    python3 -m venv venv
+                        python3 -m venv venv
 
-                  fi
+                    fi
  
-                  . venv/bin/activate
+                    . venv/bin/activate
 
-                  pip install --upgrade pip
+                    pip install --upgrade pip
 
-                  pip install -r requirements.txt
+                    pip install -r requirements.txt
 
                 '''
 
@@ -54,15 +48,15 @@ pipeline {
 
                 sh '''
 
-                  echo "=== Running Django migrate & collectstatic ==="
+                    echo "=== Running Django migrate & collectstatic ==="
 
-                  cd backend
+                    cd backend
 
-                  . venv/bin/activate
+                    . venv/bin/activate
  
-                  python manage.py migrate
+                    python manage.py migrate
 
-                  python manage.py collectstatic --noinput
+                    python manage.py collectstatic --noinput
 
                 '''
 
@@ -76,19 +70,19 @@ pipeline {
 
                 sh '''
 
-                  echo "=== Deploying backend to /var/www/xeda/backend ==="
+                    echo "=== Deploying backend to /var/www/xeda/backend ==="
  
-                  mkdir -p /var/www/xeda/backend
+                    mkdir -p /var/www/xeda/backend
  
-                  rsync -av \
+                    rsync -av \
 
-                    --exclude='venv' \
+                      --exclude='venv' \
 
-                    --exclude='xeda/db.sqlite3' \
+                      --exclude='xeda/db.sqlite3' \
 
-                    --exclude='__pycache__' \
+                      --exclude='__pycache__' \
 
-                    backend/ /var/www/xeda/backend/
+                      backend/ /var/www/xeda/backend/
 
                 '''
 
@@ -102,15 +96,15 @@ pipeline {
 
                 sh '''
 
-                  echo "=== Restarting Django via PM2 ==="
+                    echo "=== Restarting Django via PM2 ==="
  
-                  cd /var/www/xeda/backend
+                    cd /var/www/xeda/backend
  
-                  pm2 restart xeda-backend || pm2 start ecosystem.config.js --name xeda-backend
+                    pm2 restart xeda-backend || pm2 start ecosystem.config.js --name xeda-backend
 
-                  pm2 save
+                    pm2 save
 
-                  pm2 ls
+                    pm2 ls
 
                 '''
 
@@ -118,23 +112,17 @@ pipeline {
 
         }
  
-        /* ======================
-
-           FRONTEND (VITE)
-
-        ====================== */
-
         stage('Frontend: Install Dependencies') {
 
             steps {
 
                 sh '''
 
-                  echo "=== Installing frontend dependencies ==="
+                    echo "=== Installing frontend dependencies ==="
 
-                  cd frontend
+                    cd frontend
 
-                  npm ci || npm install
+                    npm ci || npm install
 
                 '''
 
@@ -148,11 +136,11 @@ pipeline {
 
                 sh '''
 
-                  echo "=== Building frontend (Vite) ==="
+                    echo "=== Building frontend (Vite) ==="
 
-                  cd frontend
+                    cd frontend
 
-                  npm run build
+                    npm run build
 
                 '''
 
@@ -166,13 +154,13 @@ pipeline {
 
                 sh '''
 
-                  echo "=== Deploying frontend to /var/www/xeda/frontend ==="
+                    echo "=== Deploying frontend to /var/www/xeda/frontend ==="
  
-                  mkdir -p /var/www/xeda/frontend
+                    mkdir -p /var/www/xeda/frontend
 
-                  rm -rf /var/www/xeda/frontend/*
+                    rm -rf /var/www/xeda/frontend/*
  
-                  rsync -av frontend/dist/ /var/www/xeda/frontend/
+                    rsync -av frontend/dist/ /var/www/xeda/frontend/
 
                 '''
 
@@ -180,21 +168,15 @@ pipeline {
 
         }
  
-        /* ======================
-
-           NGINX
-
-        ====================== */
-
         stage('Restart Nginx') {
 
             steps {
 
                 sh '''
 
-                  echo "=== Restarting Nginx ==="
+                    echo "=== Restarting Nginx ==="
 
-                  sudo /usr/bin/systemctl restart nginx
+                    sudo /usr/bin/systemctl restart nginx
 
                 '''
 
@@ -208,12 +190,18 @@ pipeline {
 
         success {
 
-            echo "🎉 XEDA backend-first deployment successful!"
+            echo "XEDA backend-first deployment successful"
 
         }
 
         failure {
 
-            echo "❌ XEDA deployment failed!"
+            echo "XEDA deployment failed"
 
         }
+
+    }
+
+}
+
+ 

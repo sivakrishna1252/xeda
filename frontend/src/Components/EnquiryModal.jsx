@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function EnquiryModal({ isOpen, onClose }) {
-  const [status, setStatus] = useState("idle"); 
+  const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
   const nameRef = useRef(null);
   const navigate = useNavigate();
@@ -31,11 +31,38 @@ export default function EnquiryModal({ isOpen, onClose }) {
 
   function validate(values) {
     const errs = {};
-    if (!values.name?.trim()) errs.name = "Full name is required";
-    if (!values.email?.match(/^\S+@\S+\.\S+$/)) errs.email = "Valid email required";
-    if (!values.phone?.trim()) errs.phone = "Phone number is required";
-    if (!values.product?.trim()) errs.product = "Product and quantity are required";
-    if (!values.location?.trim()) errs.location = "Delivery location is required";
+
+    // Name validation
+    if (!values.name?.trim()) {
+      errs.name = "Full name is required";
+    }
+
+    // Email validation
+    if (!values.email?.trim()) {
+      errs.email = "Email is required";
+    } else if (!values.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      errs.email = "Please enter a valid email address";
+    }
+
+    // Phone validation - exactly 10 digits
+    if (!values.phone?.trim()) {
+      errs.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(values.phone.trim())) {
+      errs.phone = "Phone number must be exactly 10 digits";
+    }
+
+    // Product validation
+    if (!values.product?.trim()) {
+      errs.product = "Product and quantity are required";
+    }
+
+    // Location/Pincode validation - exactly 6 digits
+    if (!values.location?.trim()) {
+      errs.location = "Pin code is required";
+    } else if (!/^\d{6}$/.test(values.location.trim())) {
+      errs.location = "Pin code must be exactly 6 digits";
+    }
+
     return errs;
   }
 
@@ -49,11 +76,30 @@ export default function EnquiryModal({ isOpen, onClose }) {
 
     setStatus("sending");
     try {
-      await new Promise((r) => setTimeout(r, 1200)); 
-      e.target.reset();
-      onClose(); 
-      navigate("/thank-you"); 
-    } catch {
+      const response = await fetch("http://localhost:9000/api/contacts/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          select_product: values.product,
+          quality: values.quantity,
+          city_pincode: values.location,
+        }),
+      });
+
+      if (response.ok) {
+        e.target.reset();
+        onClose();
+        navigate("/thank-you");
+      } else {
+        throw new Error("Failed to submit");
+      }
+    } catch (error) {
+      console.error(error);
       setStatus("idle");
       alert("Something went wrong, try again!");
     }
@@ -108,8 +154,8 @@ export default function EnquiryModal({ isOpen, onClose }) {
           <div className="flex gap-3">
             <select name="product" defaultValue="" className="w-2/3 px-4 py-2 border rounded-md focus:ring-2 focus:ring-green-400 outline-none">
               <option value="" disabled>Select Product</option>
-              <option value="500ml Wheatgrass Juice">30ml Wheatgrass Juice</option>
-              <option value="250ml Wheatgrass Juice">50ml Wheatgrass Juice</option>
+              <option value="30ml Wheatgrass Juice">30ml Wheatgrass Juice</option>
+              <option value="50ml Wheatgrass Juice">50ml Wheatgrass Juice</option>
             </select>
             <select name="quantity" defaultValue="" className="w-1/3 px-4 py-2 border rounded-md focus:ring-2 focus:ring-green-400 outline-none">
               <option value="" disabled>Qty</option>

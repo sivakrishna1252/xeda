@@ -1,0 +1,29 @@
+@import "tailwindcss";
+/* move pagination to bottom center and size bullets */
+.swiper-pagination {
+  bottom: 18px !important;
+  z-index: 15; /* sits above slides but below content */
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: 0.9;
+}
+
+
+
+*{
+  text-wrap: balance;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.btn-green {
+  @apply inline-block px-8 py-3 rounded-full font-semibold text-white 
+  bg-gradient-to-r from-green-500 to-green-600 
+  shadow-[0_0_15px_rgba(34,197,94,0.4)] 
+  hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] 
+  hover:scale-105 active:scale-95 
+  transition-all duration-300;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function EnquiryModal({ isOpen, onClose }) {
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState("idle"); 
   const [errors, setErrors] = useState({});
   const nameRef = useRef(null);
   const navigate = useNavigate();
@@ -32,37 +32,10 @@ export default function EnquiryModal({ isOpen, onClose }) {
   function validate(values) {
     const errs = {};
     if (!values.name?.trim()) errs.name = "Full name is required";
-
-    // Email Validation
-    if (!values.email?.trim()) {
-      errs.email = "Email is required";
-    } else if (!values.email.match(/^\S+@\S+\.\S+$/)) {
-      errs.email = "Please enter a valid email address";
-    }
-
-    // Phone Validation (10 digits)
-    if (!values.phone?.trim()) {
-      errs.phone = "Phone number is required";
-    } else if (!values.phone.match(/^\d{10}$/)) {
-      errs.phone = "Phone number must be exactly 10 digits";
-    }
-
-    if (!values.product?.trim()) errs.product = "Product is required";
-
-    // Pincode/Location Validation (6 digits)
-    if (!values.location?.trim()) {
-      errs.location = "City / Pin Code is required";
-    } else {
-      // Check if it contains a 6-digit number and no more than that/no alphabets if it's just a pincode
-      // The user wants 6 digits and no alphabets for pincode.
-      // If the field is "City / Pin Code", it might be hard to validate strictly if they enter both.
-      // But based on request "6 kana ykakvu chesin alphabets use chesina", I'll treat it as Pincode check.
-      const pincode = values.location.trim();
-      if (!pincode.match(/^\d{6}$/)) {
-        errs.location = "Pin Code must be exactly 6 digits and numeric";
-      }
-    }
-
+    if (!values.email?.match(/^\S+@\S+\.\S+$/)) errs.email = "Valid email required";
+    if (!values.phone?.trim()) errs.phone = "Phone number is required";
+    if (!values.product?.trim()) errs.product = "Product and quantity are required";
+    if (!values.location?.trim()) errs.location = "Delivery location is required";
     return errs;
   }
 
@@ -76,36 +49,13 @@ export default function EnquiryModal({ isOpen, onClose }) {
 
     setStatus("sending");
     try {
-      const response = await fetch('http://localhost:8000/api/contacts/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: values.name,
-          email: values.email,
-          phone: values.phone,
-          select_product: values.product,
-          quality: values.quantity || "1", // Fallback to 1 if not selected
-          pincode: values.location, // Explicitly sending pincode to backend
-          message: `City/Pin Code: ${values.location}`
-        })
-      });
-
-      const data = await response.json();
-
-      if (data.success || response.ok) {
-        e.target.reset();
-        onClose();
-        navigate("/thank-you");
-      } else {
-        setStatus("idle");
-        setErrors({ submit: data.errors || "Submission failed" });
-      }
-    } catch (error) {
-      console.error('Error submitting enquiry:', error);
+      await new Promise((r) => setTimeout(r, 1200)); 
+      e.target.reset();
+      onClose(); 
+      navigate("/thank-you"); 
+    } catch {
       setStatus("idle");
-      setErrors({ submit: "An error occurred. Please try again later." });
+      alert("Something went wrong, try again!");
     }
   }
 
@@ -184,7 +134,6 @@ export default function EnquiryModal({ isOpen, onClose }) {
           >
             {status === "sending" ? "Submitting..." : "Submit Enquiry"}
           </button>
-          {errors.submit && <p className="text-red-500 text-sm mt-1 text-center">{errors.submit}</p>}
 
           {/* Close */}
           <div className="mt-3 text-center">

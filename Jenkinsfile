@@ -5,7 +5,6 @@ pipeline {
         BACKEND_DIR = "backend"
         FRONTEND_DIR = "frontend"
         DEPLOY_DIR = "/var/www/xeda"
-        VENV_DIR = "venv"
     }
 
     stages {
@@ -27,22 +26,12 @@ pipeline {
 
                     cd ${BACKEND_DIR}
 
-                    if [ ! -d "${VENV_DIR}" ]; then
-                        python3 -m venv ${VENV_DIR}
-                    fi
+                    rm -rf venv
+                    python3 -m venv venv
+                    . venv/bin/activate
 
-                    . ${VENV_DIR}/bin/activate
                     pip install --upgrade pip
-
-                    # Install requirements
-                    if [ -f "requirements/prod.txt" ]; then
-                        pip install -r requirements/prod.txt
-                    elif [ -f "requirements/base.txt" ]; then
-                        pip install -r requirements/base.txt
-                    else
-                        echo "❌ No requirements file found"
-                        exit 1
-                    fi
+                    pip install -r requirements.txt
                 '''
             }
         }
@@ -53,7 +42,7 @@ pipeline {
                     set -eux
 
                     cd ${BACKEND_DIR}
-                    . ${VENV_DIR}/bin/activate
+                    . venv/bin/activate
 
                     python manage.py migrate --noinput
                     python manage.py collectstatic --noinput
@@ -71,7 +60,6 @@ pipeline {
                     rsync -av \
                       --exclude='venv' \
                       --exclude='__pycache__' \
-                      --exclude='db.sqlite3' \
                       ${BACKEND_DIR}/ ${DEPLOY_DIR}/backend/
                 '''
             }
@@ -93,7 +81,7 @@ pipeline {
         }
 
         /* ======================
-           FRONTEND (REACT + VITE)
+           FRONTEND (REACT)
         ====================== */
 
         stage('Frontend: Install Dependencies') {
@@ -102,7 +90,7 @@ pipeline {
                     set -eux
 
                     cd ${FRONTEND_DIR}
-                    npm ci
+                    npm ci || npm install
                 '''
             }
         }
@@ -130,10 +118,6 @@ pipeline {
                 '''
             }
         }
-
-        /* ======================
-           NGINX
-        ====================== */
 
         stage('Restart Nginx') {
             steps {

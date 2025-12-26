@@ -1,160 +1,155 @@
 pipeline {
     agent any
- 
+
+    environment {
+        BACKEND_DIR = "backend"
+        FRONTEND_DIR = "frontend"
+        DEPLOY_DIR = "/var/www/xeda"
+        VENV_DIR = "venv"
+    }
+
     stages {
- 
+
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
- 
+
         /* ======================
-           BACKEND (DJANGO + PM2)
+           BACKEND (DJANGO)
         ====================== */
+
         stage('Backend: Setup Virtualenv & Install Dependencies') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Setting up backend virtualenv ==="
-                    cd backend
- 
-                    # Recreate venv if missing or broken
-                    if [ ! -f "venv/bin/activate" ]; then
-                        echo "Creating fresh virtualenv"
-                        rm -rf venv
-                        python3 -m venv venv
+
+                    cd ${BACKEND_DIR}
+
+                    if [ ! -d "${VENV_DIR}" ]; then
+                        python3 -m venv ${VENV_DIR}
                     fi
- 
-                    . venv/bin/activate
- 
+
+                    . ${VENV_DIR}/bin/activate
                     pip install --upgrade pip
- 
-                    # Install dependencies (support both layouts)
-                    if [ -f "requirements.txt" ]; then
-                        pip install -r requirements.txt
-                    elif [ -f "xeda/requirements.txt" ]; then
-                        pip install -r xeda/requirements.txt
+
+                    # Install requirements
+                    if [ -f "requirements/prod.txt" ]; then
+                        pip install -r requirements/prod.txt
+                    elif [ -f "requirements/base.txt" ]; then
+                        pip install -r requirements/base.txt
                     else
-                        echo "ERROR: requirements.txt not found"
+                        echo "❌ No requirements file found"
                         exit 1
                     fi
                 '''
             }
         }
- 
+
         stage('Backend: Migrate & Collectstatic') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Running Django migrate & collectstatic ==="
-                    cd backend
-                    . venv/bin/activate
- 
-                    python manage.py migrate
+
+                    cd ${BACKEND_DIR}
+                    . ${VENV_DIR}/bin/activate
+
+                    python manage.py migrate --noinput
                     python manage.py collectstatic --noinput
                 '''
             }
         }
- 
+
         stage('Backend: Deploy') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Deploying backend to /var/www/xeda/backend ==="
- 
-                    mkdir -p /var/www/xeda/backend
- 
+
+                    mkdir -p ${DEPLOY_DIR}/backend
+
                     rsync -av \
                       --exclude='venv' \
-                      --exclude='xeda/db.sqlite3' \
                       --exclude='__pycache__' \
-                      backend/ /var/www/xeda/backend/
+                      --exclude='db.sqlite3' \
+                      ${BACKEND_DIR}/ ${DEPLOY_DIR}/backend/
                 '''
             }
         }
- 
+
         stage('Backend: PM2 Restart') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Restarting Django via PM2 ==="
-                    cd /var/www/xeda/backend
- 
-                    pm2 restart xeda-backend || pm2 start ecosystem.config.js --name xeda-backend
+
+                    cd ${DEPLOY_DIR}/backend
+
+                    pm2 restart xeda-backend || \
+                    pm2 start ecosystem.config.js --name xeda-backend
+
                     pm2 save
-                    pm2 ls
                 '''
             }
         }
- 
+
         /* ======================
-           FRONTEND (VITE)
+           FRONTEND (REACT + VITE)
         ====================== */
+
         stage('Frontend: Install Dependencies') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Installing frontend dependencies ==="
-                    cd frontend
-                    npm ci || npm install
+
+                    cd ${FRONTEND_DIR}
+                    npm ci
                 '''
             }
         }
- 
+
         stage('Frontend: Build') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Building frontend (Vite) ==="
-                    cd frontend
+
+                    cd ${FRONTEND_DIR}
                     npm run build
                 '''
             }
         }
- 
+
         stage('Frontend: Deploy') {
             steps {
                 sh '''
                     set -eux
- 
-                    echo "=== Deploying frontend to /var/www/xeda/frontend ==="
- 
-                    mkdir -p /var/www/xeda/frontend
-                    rm -rf /var/www/xeda/frontend/*
- 
-                    rsync -av frontend/dist/ /var/www/xeda/frontend/
+
+                    mkdir -p ${DEPLOY_DIR}/frontend
+                    rm -rf ${DEPLOY_DIR}/frontend/*
+
+                    rsync -av ${FRONTEND_DIR}/dist/ ${DEPLOY_DIR}/frontend/
                 '''
             }
         }
- 
+
         /* ======================
            NGINX
         ====================== */
+
         stage('Restart Nginx') {
             steps {
                 sh '''
-                    set -eux
- 
-                    echo "=== Restarting Nginx ==="
-                    sudo /usr/bin/systemctl restart nginx
+                    sudo systemctl restart nginx
                 '''
             }
         }
     }
- 
+
     post {
         success {
-            echo "XEDA backend-first deployment successful"
+            echo "✅ XEDA deployment successful"
         }
         failure {
-            echo "XEDA deployment failed"
+            echo "❌ XEDA deployment failed"
         }
     }
 }

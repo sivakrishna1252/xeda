@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         BACKEND_DIR = "backend"
+        DJANGO_DIR  = "backend/xeda"
         FRONTEND_DIR = "frontend"
         DEPLOY_DIR = "/var/www/xeda"
     }
@@ -41,8 +42,8 @@ pipeline {
                 sh '''
                     set -eux
 
-                    cd ${BACKEND_DIR}
-                    . venv/bin/activate
+                    cd ${DJANGO_DIR}
+                    . ../venv/bin/activate
 
                     python manage.py migrate --noinput
                     python manage.py collectstatic --noinput

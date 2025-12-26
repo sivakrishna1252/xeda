@@ -16,31 +16,28 @@ pipeline {
  
         stage('Backend: Setup Virtualenv & Install Dependencies') {
 
-            steps {
+               steps {
 
                 sh '''
 
+                    set -eux
+ 
                     echo "=== Setting up backend virtualenv ==="
-
                     cd backend
  
-                    if [ ! -d "venv" ]; then
-
-                        python3 -m venv venv
-
-                    fi
+            # If venv is missing or broken, recreate it
+            if [ ! -f "venv/bin/activate" ]; then
+                echo "Creating fresh virtualenv"
+                rm -rf venv
+                python3 -m venv venv
+            fi
  
-                    . venv/bin/activate
-
-                    pip install --upgrade pip
-
-                    pip install -r requirements.txt
-
-                '''
-
-            }
-
-        }
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r requirements.txt
+        '''
+    }
+}
  
         stage('Backend: Migrate & Collectstatic') {
 

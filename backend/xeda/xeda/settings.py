@@ -80,15 +80,14 @@ WSGI_APPLICATION = 'xeda.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",  # postgres engine
-        "NAME": "xeda",   
-        "USER": "postgres",     # postgres username
-        "PASSWORD": "siva",     # postgres password
-        "HOST": "localhost",    # same system lo run avthunte
-        "PORT": "5432",         # default postgres port
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "xedafarm",
+        "USER": "postgres",
+        "PASSWORD": "2910",
+        "HOST": "72.60.219.145",
+        "PORT": "5432",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

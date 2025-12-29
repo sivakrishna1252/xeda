@@ -33,7 +33,7 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv(
     "ALLOWED_HOSTS",
-    "localhost,127.0.0.1,xedafarm.com,www.xedafarm.com"
+    "localhost,127.0.0.1,https://xedafarm.com,https://www.xedafarm.com"
 ).split(",")
 
 

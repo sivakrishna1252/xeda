@@ -16,7 +16,9 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t ${IMAGE_NAME}:latest .'
+                sh '''
+                  docker build -t ${IMAGE_NAME}:latest .
+                '''
             }
         }
 
@@ -34,8 +36,7 @@ pipeline {
                 sh '''
                   docker run -d \
                     --name ${CONTAINER_NAME} \
-                    --env-file backend/.env \
-                    -p ${APP_PORT}:9000 \
+                    -p ${APP_PORT}:${APP_PORT} \
                     --restart always \
                     ${IMAGE_NAME}:latest
                 '''

@@ -86,13 +86,14 @@ WSGI_APPLICATION = 'xeda.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": os.getenv("DB_NAME", "xeda"),
-        "USER": os.getenv("DB_USER", "apparatus"),
-        "PASSWORD": os.getenv("DB_PASSWORD", "ASPune$2210$"),
-        "HOST": os.getenv("DB_HOST", "72.60.219.145"),
-        "PORT": os.getenv("DB_PORT", "3306"),
+        "NAME": "xeda",
+        "USER": "apparatus",
+        "PASSWORD": "ASPune$2210$",
+        "HOST": "72.60.219.145",   # VPS IP
+        "PORT": "3306",
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

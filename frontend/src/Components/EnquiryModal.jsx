@@ -76,7 +76,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
 
     setStatus("sending");
     try {
-      const response = await fetch("http://localhost:9000/api/contacts/", {
+      const response = await fetch("/api/contacts/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,17 +91,21 @@ export default function EnquiryModal({ isOpen, onClose }) {
         }),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         e.target.reset();
         onClose();
         navigate("/thank-you");
       } else {
-        throw new Error("Failed to submit");
+        // Show backend error message if available
+        const errorMessage = data.message || data.errors || "Failed to submit enquiry. Please try again.";
+        throw new Error(errorMessage);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Form submission error:", error);
       setStatus("idle");
-      alert("Something went wrong, try again!");
+      alert(error.message || "Something went wrong, please try again!");
     }
   }
 

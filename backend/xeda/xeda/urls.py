@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from rest_framework import routers
 from xeda_backend import views
-from django.views.generic import TemplateView
+from django.conf import settings
+from pathlib import Path
 
 
 router = routers.DefaultRouter()
@@ -28,9 +29,17 @@ router.register(r'contacts', views.ContactViewSet)
 def home(request):
     return JsonResponse({"message": "Hello, This is Xeda website"})
 
+def serve_frontend(request):
+    """Serve the Vite-built index.html file"""
+    frontend_build_path = Path(settings.BASE_DIR) / "frontend_build" / "index.html"
+    if frontend_build_path.exists():
+        with open(frontend_build_path, 'r', encoding='utf-8') as f:
+            return HttpResponse(f.read(), content_type='text/html')
+    return HttpResponse("Frontend build not found", status=404)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path("", home, name="home"),
-    path("", TemplateView.as_view(template_name="index.html")),
+    path('api/hello', home, name="home"),  # API endpoint for testing
+    path("", serve_frontend, name="frontend"),  # Serve React app at root
 ]

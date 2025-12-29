@@ -26,13 +26,16 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend ./backend
 
 # Copy built frontend into Django static directory
-COPY --from=frontend /app/frontend/dist ./backend/frontend_build
+COPY --from=frontend /app/frontend/dist ./backend/xeda/frontend_build
 
 WORKDIR /app/backend
 
 # Collect static files
-RUN python manage.py collectstatic --noinput
+RUN python xeda/manage.py collectstatic --noinput
 
-EXPOSE 8000
+# Set working directory to Django project root
+WORKDIR /app/backend/xeda
+
+EXPOSE 9000
 
 CMD ["gunicorn", "xeda.wsgi:application", "--bind", "0.0.0.0:9000"]

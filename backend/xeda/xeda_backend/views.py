@@ -21,10 +21,13 @@ class ContactViewSet(viewsets.ModelViewSet):
             # Save the enquiry
             contact = serializer.save()
             
-            # Send email notification to admin
+            # Send email notification to admin (optional - don't fail if email not configured)
             try:
-                subject = f'New Purchase Enquiry from {contact.name}'
-                message = f"""
+                # Only send email if settings are configured
+                if hasattr(settings, 'DEFAULT_FROM_EMAIL') and hasattr(settings, 'ADMIN_EMAIL'):
+                    if settings.DEFAULT_FROM_EMAIL and settings.ADMIN_EMAIL:
+                        subject = f'New Purchase Enquiry from {contact.name}'
+                        message = f"""
 New Purchase Enquiry Received!
 
 Customer Details:
@@ -40,18 +43,18 @@ Submitted at: {contact.created_at.strftime('%d-%m-%Y %H:%M:%S')}
 
 ---
 This is an automated email from Xeda Purchase Enquiry System.
-                """
-                
-                send_mail(
-                    subject=subject,
-                    message=message,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[settings.ADMIN_EMAIL],
-                    fail_silently=False,
-                )
+                        """
+                        
+                        send_mail(
+                            subject=subject,
+                            message=message,
+                            from_email=settings.DEFAULT_FROM_EMAIL,
+                            recipient_list=[settings.ADMIN_EMAIL],
+                            fail_silently=True,  # Don't fail the request if email fails
+                        )
             except Exception as e:
                 # Log the error but don't fail the request
-                print(f"Failed to send email: {str(e)}")
+                print(f"Email notification skipped (not configured): {str(e)}")
             
             return Response(
                 {

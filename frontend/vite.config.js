@@ -12,6 +12,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    assetsDir: "",
+    assetsDir: "assets",
   },
+  base: '/',
 })

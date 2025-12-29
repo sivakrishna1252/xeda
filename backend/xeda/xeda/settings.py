@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import pymysql
+
+# Configure PyMySQL to work with Django
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e#ulcc6k*_56(g92p&e$n(k8(z1t1x5dj)gu25^*lstrdoj7ci'
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-e#ulcc6k*_56(g92p&e$n(k8(z1t1x5dj)gu25^*lstrdoj7ci")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 
 # Application definition
@@ -81,12 +85,12 @@ WSGI_APPLICATION = 'xeda.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "xedafarm",
-        "USER": "postgres",
-        "PASSWORD": "2910",
-        "HOST": "72.60.219.145",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.getenv("DB_NAME", "xeda"),
+        "USER": os.getenv("DB_USER", "apparatus"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "ASPune$2210$"),
+        "HOST": os.getenv("DB_HOST", "72.60.219.145"),
+        "PORT": os.getenv("DB_PORT", "3306"),
     }
 }
 

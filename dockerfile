@@ -38,4 +38,9 @@ WORKDIR /app/backend/xeda
 
 EXPOSE 9000
 
+# Create entrypoint script to run migrations and collect static files before starting server
+RUN echo '#!/bin/bash\nset -e\npython manage.py migrate --noinput\npython manage.py collectstatic --noinput\nexec "$@"' > /entrypoint.sh && \
+    chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["gunicorn", "xeda.wsgi:application", "--bind", "0.0.0.0:9000"]

@@ -1,0 +1,27 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: xeda_backend
+    ports:
+      - "9000:9000"
+    environment:
+      # Database Configuration (can be overridden via environment variables)
+      DB_NAME: ${DB_NAME:-xeda}
+      DB_USER: ${DB_USER:-apparatus}
+      DB_PASSWORD: ${DB_PASSWORD:-ASPune$$2210$$}
+      DB_HOST: ${DB_HOST:-72.60.219.145}
+      DB_PORT: ${DB_PORT:-3306}
+      # Django Configuration (can be overridden via environment variables)
+      SECRET_KEY: ${SECRET_KEY:-django-insecure-e#ulcc6k*_56(g92p&e$$n(k8(z1t1x5dj)gu25^*lstrdoj7ci}
+      DEBUG: ${DEBUG:-True}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-*}
+    restart: unless-stopped
+    networks:
+      - xeda_network
+
+networks:
+  xeda_network:
+    driver: bridge
+

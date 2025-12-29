@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Copyright */}
           <p className="text-xs text-gray-400 text-center">
             © {new Date().getFullYear()}{" "}
-            <span className="text-green-400">Xeda Farm</span>. All rights reserved.
+            <span className="text-green-400">XedaFarm</span>. All rights reserved.
           </p>
         </div>
       </footer>

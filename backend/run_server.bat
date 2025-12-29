@@ -1,5 +1,5 @@
 @echo off
-echo Starting Django development server on port 8000...
+echo Starting Django development server on port 9000...
 
 cd xeda
 

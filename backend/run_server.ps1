@@ -1,6 +1,6 @@
 # Activate virtual environment and run Django server on port 6000
 
-Write-Host "Starting Django development server on port 8000..." -ForegroundColor Green
+Write-Host "Starting Django development server on port 9000..." -ForegroundColor Green
 
 # Navigate to the Django project directory
 Set-Location -Path "$PSScriptRoot\xeda"
@@ -14,5 +14,5 @@ if (Test-Path $venvPath) {
     Write-Host "Warning: Virtual environment not found at $venvPath" -ForegroundColor Yellow
 }
 
-# Run Django server on port 6000
+# Run Django server on port 9000
 python manage.py runserver 9000

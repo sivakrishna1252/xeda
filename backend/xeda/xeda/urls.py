@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.http import JsonResponse
 from rest_framework import routers
 from xeda_backend import views
+from django.views.generic import TemplateView
 
 
 router = routers.DefaultRouter()
@@ -31,4 +32,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path("", home, name="home"),
+    path("", TemplateView.as_view(template_name="index.html")),
 ]

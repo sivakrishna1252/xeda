@@ -79,9 +79,13 @@ WSGI_APPLICATION = 'xeda.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",  # postgres engine
+        "NAME": "xeda",   
+        "USER": "postgres",     # postgres username
+        "PASSWORD": "siva",     # postgres password
+        "HOST": "localhost",    # same system lo run avthunte
+        "PORT": "5432",         # default postgres port
     }
 }
 

@@ -172,3 +172,7 @@ REST_FRAMEWORK = {
 
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://xedafarm.com",
+    "https://www.xedafarm.com",
+]

@@ -39,7 +39,11 @@ WORKDIR /app/backend/xeda
 EXPOSE 9000
 
 # Create entrypoint script to run migrations and collect static files before starting server
-RUN echo '#!/bin/bash\nset -e\npython manage.py migrate --noinput\npython manage.py collectstatic --noinput\nexec "$@"' > /entrypoint.sh && \
+RUN echo '#!/bin/sh' > /entrypoint.sh && \
+    echo 'set -e' >> /entrypoint.sh && \
+    echo 'python manage.py migrate --noinput' >> /entrypoint.sh && \
+    echo 'python manage.py collectstatic --noinput' >> /entrypoint.sh && \
+    echo 'exec "$@"' >> /entrypoint.sh && \
     chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

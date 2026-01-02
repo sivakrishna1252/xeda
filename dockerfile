@@ -39,10 +39,17 @@ WORKDIR /app/backend/xeda
 EXPOSE 9000
 
 # Create entrypoint script to run migrations and collect static files before starting server
+# Add logging to help debug issues
 RUN echo '#!/bin/sh' > /entrypoint.sh && \
     echo 'set -e' >> /entrypoint.sh && \
+    echo 'echo "=== Starting entrypoint script ==="' >> /entrypoint.sh && \
+    echo 'echo "Working directory: $(pwd)"' >> /entrypoint.sh && \
+    echo 'echo "Python version: $(python --version)"' >> /entrypoint.sh && \
+    echo 'echo "=== Running database migrations ==="' >> /entrypoint.sh && \
     echo 'python manage.py migrate --noinput' >> /entrypoint.sh && \
+    echo 'echo "=== Collecting static files ==="' >> /entrypoint.sh && \
     echo 'python manage.py collectstatic --noinput' >> /entrypoint.sh && \
+    echo 'echo "=== Starting Gunicorn server ==="' >> /entrypoint.sh && \
     echo 'exec "$@"' >> /entrypoint.sh && \
     chmod +x /entrypoint.sh
 

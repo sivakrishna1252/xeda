@@ -6,7 +6,7 @@ export default function About({ onOpenModal }) {
     <section id="about" className="py-24 bg-gradient-to-b from-green-50 to-white" aria-label="About Xeda Farm">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
             About Xeda Farm
           </h2>
           <div className="mx-auto w-20 h-1 bg-green-500 rounded-full"></div>
@@ -20,7 +20,7 @@ export default function About({ onOpenModal }) {
           </div>
 
           <div className="space-y-6 text-center md:text-left">
-            <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-800 leading-relaxed">
               At <span className="font-semibold text-green-700">Xeda Farm</span>, we cultivate premium wheatgrass through
               sustainable, small-batch farming to deliver the purest form of green nutrition. Each bottle is grown,
               harvested, and pressed with precision to ensure unmatched freshness and nutrient density — building not
@@ -33,7 +33,7 @@ export default function About({ onOpenModal }) {
         </button>
             </div>
 
-            <p className="text-sm text-gray-500 text-center md:text-left">
+            <p className="text-base md:text-lg text-gray-500 text-center md:text-left">
               Sustainably grown • Nutrient-dense • 100% natural
             </p>
           </div>

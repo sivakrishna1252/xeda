@@ -8,12 +8,12 @@ export default function CTA({ onOpenModal }) {
       aria-label="Get in Touch Section"
     >
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
           Get in Touch With Us
         </h2>
 
-        <p className="text-lg text-green-700 mb-10 leading-relaxed">
-          We’d love to hear from you — connect with us for any enquiries or collaborations.
+        <p className="text-base md:text-lg text-green-700 mb-10 leading-relaxed">
+          We'd love to hear from you — connect with us for any enquiries or collaborations.
         </p>
 
         <button onClick={onOpenModal} className="btn-green">

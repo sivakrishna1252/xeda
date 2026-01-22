@@ -44,7 +44,7 @@ export default function Reviews() {
         {/* Section Heading */}
         <h2
           id="wheatgrass-reviews"
-          className="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-4 tracking-tight"
+          className="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-6 tracking-tight"
         >
           What People Say About Wheatgrass Juice
         </h2>
@@ -54,7 +54,7 @@ export default function Reviews() {
             Xeda Wheatgrass Juice
           </span>{" "}
           — a pure, natural way to boost energy, immunity, and inner wellness.
-          Here’s what they’re saying about their experience!
+          Here's what they're saying about their experience!
         </p>
 
         {/* Swiper Carousel */}
@@ -96,14 +96,14 @@ export default function Reviews() {
                       className="w-20 h-20 rounded-full border-4 border-green-400 shadow-md object-cover mb-4"
                       loading="lazy"
                     />
-                    <p className="text-gray-800 text-base leading-relaxed italic mb-4">
-                      “{t.text}”
+                    <p className="text-gray-800 text-base md:text-lg leading-relaxed italic mb-4">
+                      "{t.text}"
                     </p>
                     <div>
                       <h4 className="font-semibold text-emerald-800 text-lg">
                         {t.name}
                       </h4>
-                      <p className="text-gray-600 text-sm">{t.location}</p>
+                      <p className="text-gray-600 text-base md:text-lg">{t.location}</p>
                     </div>
                   </div>
                 </div>

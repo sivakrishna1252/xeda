@@ -23,15 +23,15 @@ export default function Benefits() {
   return (
     <section
       id="benefits"
-      className="scroll-mt-10 min-h-screen py-12 px-4 bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800"
+      className="scroll-mt-10 min-h-screen py-24 px-4 bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800"
     >
       {/* ===== Title Section ===== */}
-      <div className="max-w-6xl mx-auto text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-emerald-900 mb-3 tracking-tight">
+      <div className="max-w-6xl mx-auto text-center mb-14">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-6 tracking-tight">
           The Powerful Health Benefits of Wheatgrass
         </h2>
         <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          Discover how wheatgrass supports both men’s strength and women’s
+          Discover how wheatgrass supports both men's strength and women's
           natural balance — promoting energy, detox, and overall vitality.
         </p>
       </div>
@@ -176,7 +176,7 @@ function BenefitItem({ icon, title, desc }) {
         <strong className="text-base text-gray-900 block font-semibold">
           {title}
         </strong>
-        <p className="text-gray-600 text-sm leading-snug">{desc}</p>
+        <p className="text-gray-600 text-base md:text-lg leading-relaxed">{desc}</p>
       </div>
     </li>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/Logo.webp";
+import logo from "../assets/xeda logo.webp";
 
 export default function Header({ onOpenModal }) {
   const [mobileOpen, setMobileOpen] = useState(false);

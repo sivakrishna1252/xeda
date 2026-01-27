@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/xeda logo.webp";
+import { Link } from "react-router-dom";
 
 export default function Header({ onOpenModal }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function Header({ onOpenModal }) {
 
   const links = [
     { href: "/", label: "Home" },
+     { href: "/blogs", label: "Blog" },
     { href: "#benefits", label: "Benefits" },
     { href: "#about", label: "About" },
     { href: "#testimonials", label: "Testimonials" },
@@ -40,15 +42,27 @@ export default function Header({ onOpenModal }) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-gray-200 hover:text-green-300 font-medium transition-colors duration-150"
-              >
-                {l.label}
-              </a>
-            ))}
+           {links.map((l) =>
+  l.href.startsWith("#") ? (
+    <a
+      key={l.href}
+      href={l.href}
+      className="text-gray-200 hover:text-green-300 font-medium"
+    >
+      {l.label}
+    </a>
+  ) : (
+    <Link
+      key={l.href}
+      to={l.href}
+      onClick={() => setMobileOpen(false)}
+      className="text-gray-200 hover:text-green-300 font-medium"
+    >
+      {l.label}
+    </Link>
+  )
+)}
+
 
             <button onClick={onOpenModal} className="btn-green ml-4">
               Enquiry

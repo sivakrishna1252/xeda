@@ -8,27 +8,27 @@ import femaleAvatar from "../assets/women.webp";
 
 const testimonials = [
   {
-    name: "Ravi Sharma",
-    location: "Pune, Maharashtra",
-    text: "I started drinking wheatgrass juice daily, and I’ve noticed a big boost in my immunity. I hardly fall sick now, even during seasonal changes. It’s truly nature’s protection for me!",
+    name: "Vikram Deshpande",
+    location: "Magarpatta City, Pune Maharashtra",
+    text: "Post-leg day soreness used to kill my week, but since I added Xeda wheatgrass shots to my routine, my recovery time is way faster. I feel less stiff in the mornings and ready to hit the weights again. Essential for anyone serious about lifting.",
     avatar: maleAvatar,
   },
   {
-    name: "Sneha Patel",
-    location: "Ahmedabad, Gujarat",
-    text: "Wheatgrass has been a game changer for my fitness routine. I’ve managed to shed a few kilos naturally and feel much lighter and more active every day.",
+    name: "Aditya Kulkarni",
+    location: "Kharadi, Pune Maharashtra",
+    text: "I was skeptical about natural supplements, but the stamina boost is real. Unlike sugary energy drinks that make me jittery, this gives me steady, clean energy for my entire workout. Perfect for my evening sessions after work.",
+    avatar: maleAvatar,
+  },
+  {
+    name: "Mrunal Apte",
+    location: "Viman Nagar, Pune Maharashtra",
+    text: "I stick to a high-protein diet, which made me feel heavy and bloated. Wheatgrass juice fixed my digestion. Now I feel light, energetic, and my workouts in Viman Nagar are so much better because I'm not fighting that sluggish feeling.",
     avatar: femaleAvatar,
   },
   {
-    name: "Rohit Menon",
-    location: "Kochi, Kerala",
-    text: "Detoxing with wheatgrass has made my skin glow and improved my digestion. I feel refreshed from the inside out — it’s part of my morning routine now.",
-    avatar: maleAvatar,
-  },
-  {
-    name: "Anita Verma",
-    location: "Delhi",
-    text: "My cholesterol levels dropped after a few weeks of having wheatgrass shots. It’s amazing how something so simple can make such a big difference to heart health.",
+    name: "Sayali Joshi",
+    location: "Hadapsar, Pune Maharashtra",
+    text: "I swapped my chemical pre-workout for a fresh wheatgrass shot, and the difference is crazy. I have better endurance on the treadmill, and honestly, my skin has cleared up so much too. It’s like a detox and energy booster in one.",
     avatar: femaleAvatar,
   },
 ];
@@ -96,7 +96,7 @@ export default function Reviews() {
                       className="w-20 h-20 rounded-full border-4 border-green-400 shadow-md object-cover mb-4"
                       loading="lazy"
                     />
-                    <p className="text-gray-800 text-base md:text-lg leading-relaxed italic mb-4">
+                    <p className="text-gray-800 text-base text-md leading-relaxed italic mb-4">
                       "{t.text}"
                     </p>
                     <div>

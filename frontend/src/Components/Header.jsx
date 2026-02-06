@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/xeda logo.webp";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header({ onOpenModal }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const location = useLocation();
 
   useEffect(() => {
     if (mobileOpen) {
@@ -19,12 +19,24 @@ export default function Header({ onOpenModal }) {
     };
   }, [mobileOpen]);
 
+  // Handle scroll to section on location change
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const links = [
     { href: "/", label: "Home" },
-     { href: "/blogs", label: "Blog" },
-    { href: "#benefits", label: "Benefits" },
-    { href: "#about", label: "About" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "/blogs", label: "Blog" },
+    { href: "/#benefits", label: "Benefits" },
+    { href: "/#about", label: "About" },
+    { href: "/#testimonials", label: "Testimonials" },
   ];
 
   return (
@@ -42,26 +54,16 @@ export default function Header({ onOpenModal }) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-           {links.map((l) =>
-  l.href.startsWith("#") ? (
-    <a
-      key={l.href}
-      href={l.href}
-      className="text-gray-200 hover:text-green-300 font-medium"
-    >
-      {l.label}
-    </a>
-  ) : (
-    <Link
-      key={l.href}
-      to={l.href}
-      onClick={() => setMobileOpen(false)}
-      className="text-gray-200 hover:text-green-300 font-medium"
-    >
-      {l.label}
-    </Link>
-  )
-)}
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                to={l.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-gray-200 hover:text-green-300 font-medium"
+              >
+                {l.label}
+              </Link>
+            ))}
 
 
             <button onClick={onOpenModal} className="btn-green ml-4">
@@ -78,12 +80,12 @@ export default function Header({ onOpenModal }) {
               Enquiry
             </button>
 
-          <button
-  onClick={() => setMobileOpen((s) => !s)}
-  className="p-2 rounded-md text-gray-200 hover:bg-gray-800 relative z-[60]"
-  aria-labelledby="menuLabel"
-  title={mobileOpen ? "Close Menu" : "Open Menu"}
->
+            <button
+              onClick={() => setMobileOpen((s) => !s)}
+              className="p-2 rounded-md text-gray-200 hover:bg-gray-800 relative z-[60]"
+              aria-labelledby="menuLabel"
+              title={mobileOpen ? "Close Menu" : "Open Menu"}
+            >
               {mobileOpen ? (
                 // Close Icon
                 <svg
@@ -124,14 +126,14 @@ export default function Header({ onOpenModal }) {
       {mobileOpen && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-xl flex flex-col justify-center items-center space-y-8 z-50 transition-all duration-300 md:hidden">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               onClick={() => setMobileOpen(false)}
               className="text-gray-200 text-2xl font-medium hover:text-green-300 transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
 
           <button

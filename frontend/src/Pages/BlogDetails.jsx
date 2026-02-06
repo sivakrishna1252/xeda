@@ -11,37 +11,37 @@ const BlogContent1 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       Fresh wheatgrass juice is widely used as a natural recovery and wellness supplement. When taken consistently at 30 ml per day, its benefits appear gradually in stages rather than instantly. Below is a realistic timeline of what most people experience.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Within 3–7 Days: Early Internal Effects</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       During the first week, the body begins internal adjustments. Many people notice reduced muscle heaviness and morning stiffness, improved digestion, better hydration, and a mild increase in daily energy. These changes are subtle but noticeable, especially in physically active individuals or those undergoing physiotherapy.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Within 10–14 Days: Muscle Recovery Improvements</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       By the second week, muscle-specific benefits become clearer. Recovery after workouts or therapy sessions feels faster, muscle soreness (DOMS) reduces, inflammation-related discomfort decreases, and endurance during physical activity improves. This is when most users clearly feel recovery support.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Within 3–4 Weeks: Cellular and Tissue Repair</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Consistent intake over three to four weeks supports deeper healing. Muscle tone and flexibility improve; tissue repair accelerates, cramps and fatigue reduce, and oxygen utilization becomes more efficient, making physical activity feel easier.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">6–8 Weeks: Whole-Body Benefits</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       With long-term use, wheatgrass supports immunity, hemoglobin levels, oxidative stress reduction, and overall stamina. Many users also report better sleep quality and skin health.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Factors That Affect The Speed of Results</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Results may vary depending on activity level, protein intake, hydration, sleep quality, and consistency. Active individuals and those consuming adequate protein often experience faster benefits.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Best Practices for Faster Recovery</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Take 30 ml on an empty stomach or post-workout. Avoid tea or coffee for at least 30 minutes after consumption. Combine with adequate protein intake within one hour and maintain consistency for at least 21 days.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Conclusion</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Fresh wheatgrass juice is not a replacement for protein but works as a powerful recovery support drink. With daily 30 ml intake, initial effects appear within a week, clear muscle recovery benefits in two weeks, and full benefits within one month.
@@ -54,12 +54,12 @@ const BlogContent2 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       The term "superfood" is often used, but wheatgrass truly deserves this title. Let's explore what makes this green powerhouse so special.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Exceptional Nutrient Density</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Wheatgrass contains an impressive array of vitamins, minerals, and phytonutrients in a highly concentrated form. Just one ounce of wheatgrass juice provides more nutrition than many servings of vegetables.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Key Nutrients</h3>
     <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
       <li>Chlorophyll - Nature's blood builder</li>
@@ -69,7 +69,7 @@ const BlogContent2 = () => (
       <li>Essential minerals: iron, calcium, magnesium</li>
       <li>Powerful antioxidants and enzymes</li>
     </ul>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Health Benefits</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       The combination of these nutrients provides numerous health benefits including detoxification, immune support, increased energy, and overall wellness enhancement.
@@ -82,12 +82,12 @@ const BlogContent3 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       There are many misconceptions about daily wheatgrass consumption. Let's clear the air and provide you with evidence-based information.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Recommended Daily Intake</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       For most adults, 30ml of fresh wheatgrass juice daily is an optimal amount. This provides significant nutritional benefits without overwhelming your system.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Common Myths Debunked</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       <strong className="text-emerald-700">Myth 1:</strong> "More is always better" - Not true. Excessive consumption can cause nausea in some individuals. Stick to recommended amounts.
@@ -95,7 +95,7 @@ const BlogContent3 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       <strong className="text-emerald-700">Myth 2:</strong> "It works instantly" - While some feel immediate energy, most benefits accumulate over time with consistent use.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Best Practices</h3>
     <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
       <li>Take on an empty stomach for better absorption</li>
@@ -111,12 +111,12 @@ const BlogContent4 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       A strong immune system is your body's first line of defense against illness. Wheatgrass offers natural support to help keep your immune system functioning at its best.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Immune-Boosting Nutrients</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Wheatgrass is rich in vitamins and minerals that are essential for immune function, including vitamin C, vitamin A, and zinc.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">How It Works</h3>
     <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
       <li>Supports white blood cell production</li>
@@ -132,12 +132,12 @@ const BlogContent5 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       Detoxification is a natural process that your body performs daily. Wheatgrass can enhance this process, helping your body eliminate toxins more effectively.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Natural Detoxification</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       The high chlorophyll content in wheatgrass helps cleanse the blood and support liver function, your body's primary detox organ.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Benefits</h3>
     <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
       <li>Supports liver health</li>
@@ -153,12 +153,12 @@ const BlogContent6 = () => (
     <p className="mb-4 text-gray-800 leading-relaxed">
       A healthy digestive system is crucial for overall wellness. Wheatgrass can play a significant role in supporting digestive health.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Digestive Support</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
       Wheatgrass contains enzymes that aid digestion and fiber that supports healthy gut bacteria.
     </p>
-    
+
     <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Key Benefits</h3>
     <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
       <li>Improves nutrient absorption</li>
@@ -180,7 +180,7 @@ const blogData = {
     date: "January 15, 2026",
     content: <BlogContent1 />,
   },
-  
+
 };
 
 export default function BlogDetails() {
@@ -238,7 +238,7 @@ export default function BlogDetails() {
             <h1 className="text-3xl md:text-3xl font-extrabold mb-6 text-emerald-900 leading-tight">
               {blog.title}
             </h1>
-            
+
             <div className="flex flex-wrap items-center gap-6 text-sm text-gray-700 mb-6">
               <div className="flex items-center gap-2">
                 <FaUser className="text-emerald-700" />

@@ -33,7 +33,7 @@ export default function Blogs() {
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          
+
           {/* Heading Section */}
           <div className="text-center mb-14">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-emerald-900">
@@ -47,11 +47,10 @@ export default function Blogs() {
 
           {/* Blog Grid */}
           <div
-            className={`grid gap-8 ${
-              isSingleBlog
-                ? "grid-cols-1 place-items-center"
-                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-            }`}
+            className={`grid gap-8 ${isSingleBlog
+              ? "grid-cols-1 place-items-center"
+              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+              }`}
           >
             {blogs.map((blog) => (
               <div

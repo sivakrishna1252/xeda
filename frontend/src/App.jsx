@@ -8,10 +8,13 @@ import ThankYou from "./Pages/Thankyou";
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
 
+import ScrollToTop from "./Components/ScrollToTop";
+
 export default function App() {
   return (
-    
+
     <Router>
+      <ScrollToTop />
       <Routes>
         {/* Home page with all components */}
         <Route path="/" element={<Home />} />

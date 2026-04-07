@@ -4,6 +4,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Header from "../Components/Header";
 import Footer from "../Components/footer";
 import blogImg from "../assets/Blog/Blog1.webp";
+import blogImg2 from "../assets/Blog/Blog (2).webp";
 
 const blogs = [
   {
@@ -14,6 +15,15 @@ const blogs = [
       "Learn how 30 ml fresh wheatgrass juice supports muscle recovery, energy, and strength over time.",
     image: blogImg,
     date: "January 15, 2026",
+  },
+  {
+    id: 2,
+    title:
+      "Wheatgrass Shots: Benefits, Detox & How to Use",
+    excerpt:
+      "Discover wheatgrass shots, their detox benefits, glowing skin effects, and how to use them daily for natural energy and inner recovery.",
+    image: blogImg2,
+    date: "April 06, 2026",
   },
   // Future blogs will be added here
 ];
@@ -31,7 +41,7 @@ export default function Blogs() {
     <>
       <Header />
 
-      <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24">
+      <div className="bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* Heading Section */}

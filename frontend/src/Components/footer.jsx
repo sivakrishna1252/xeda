@@ -76,7 +76,7 @@ export default function Footer() {
       )}
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-black/80 to-black/90 backdrop-blur-sm text-gray-300 mt-8 border-t border-gray-800/50">
+      <footer className="bg-gradient-to-b from-black/80 to-black/90 backdrop-blur-sm text-gray-300 border-t border-gray-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Main Footer Content */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-6">

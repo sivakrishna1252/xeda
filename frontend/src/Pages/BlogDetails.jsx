@@ -4,6 +4,7 @@ import { FaArrowLeft, FaCalendarAlt, FaUser } from "react-icons/fa";
 import Header from "../Components/Header";
 import Footer from "../Components/footer";
 import blogImg from "../assets/Blog/B1.webp";
+import blogImg2 from "../assets/Blog/Blog(2).webp";
 
 // Blog Content Components
 const BlogContent1 = () => (
@@ -51,123 +52,190 @@ const BlogContent1 = () => (
 
 const BlogContent2 = () => (
   <div>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      The term "superfood" is often used, but wheatgrass truly deserves this title. Let's explore what makes this green powerhouse so special.
+    <p className="mb-4 text-gray-800 leading-relaxed font-semibold text-lg">
+      It started with a simple question… "Why am I still feeling tired even after eating 'healthy'?"
     </p>
 
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Exceptional Nutrient Density</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
-      Wheatgrass contains an impressive array of vitamins, minerals, and phytonutrients in a highly concentrated form. Just one ounce of wheatgrass juice provides more nutrition than many servings of vegetables.
+      That question doesn't sound dramatic, but it's surprisingly common. Between busy routines, gym sessions, skipped meals, and quick fixes, many people end up missing out on something fundamental: real nourishment. That's where something as small as wheatgrass shots quietly enters the conversation. Not as a miracle. Not as hype. Just as a simple, natural addition that people are rediscovering.
     </p>
 
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Key Nutrients</h3>
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">What Is Wheatgrass, Really?</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      Wheatgrass is the young grass of the wheat plant, harvested early when it's still fresh and nutrient-rich. It's usually consumed as a fresh juice shot, known for its deep green colour and strong, earthy taste. Think of it less like a "drink" and more like a concentrated plant extract – one that delivers a dense mix of nutrients in a very small quantity.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">What's Inside That Tiny Shot?</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      If you've ever wondered why wheatgrass is often called a "superfood", the answer lies in its composition. It's naturally rich in:
+    </p>
     <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
-      <li>Chlorophyll - Nature's blood builder</li>
-      <li>70% chlorophyll content - highest of any plant</li>
-      <li>Complete amino acid profile</li>
-      <li>Vitamins A, C, E, K, and B-complex</li>
-      <li>Essential minerals: iron, calcium, magnesium</li>
-      <li>Powerful antioxidants and enzymes</li>
+      <li><strong className="text-emerald-700">Chlorophyll</strong> – often linked to detox support and oxygenation</li>
+      <li><strong className="text-emerald-700">Vitamins</strong> – especially A, C, E, K and B complex (B1, B2, B3, B5, B6, B12, Folate)</li>
+      <li><strong className="text-emerald-700">Minerals</strong> – including iron, magnesium, and calcium</li>
+      <li><strong className="text-emerald-700">Enzymes & antioxidants</strong> – which support internal recovery</li>
+    </ul>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      What makes it different from many packaged health drinks is that, when consumed as a fresh juice, these nutrients are still active and easily absorbed.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">The Real Health Benefits</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      Let's keep this honest. Wheatgrass isn't magic, but when taken consistently, it does support your body in noticeable ways.
+    </p>
+
+    <div className="space-y-4 mb-4">
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">1. Supports Natural Detox</p>
+        <p className="text-gray-800 leading-relaxed">
+          Wheatgrass is often associated with detox, not because it "cleanses" instantly but because it supports your liver and digestive system—the body's natural detox mechanisms.
+        </p>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">2. Helps With Blood Health</p>
+        <p className="text-gray-800 leading-relaxed">
+          Its chlorophyll content is structurally similar to haemoglobin, which is why it's often linked to improved oxygen flow and overall vitality.
+        </p>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">3. Strengthens Immunity</p>
+        <p className="text-gray-800 leading-relaxed">
+          With its antioxidant profile, wheatgrass helps your body respond better to daily stress, pollution, and fatigue.
+        </p>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">4. Promotes Glowing Skin</p>
+        <p className="text-gray-800 leading-relaxed">
+          Many people notice gradual improvements in skin clarity and texture. This is less about external beauty and more about internal balance showing up externally.
+        </p>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">5. Encourages Inner Recovery</p>
+        <p className="text-gray-800 leading-relaxed">
+          Whether it's post-workout fatigue or general burnout, wheatgrass supports what can be called 'inner recovery' – helping your body reset and repair over time.
+        </p>
+      </div>
+    </div>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">How to Take Wheatgrass Shots</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      One of the biggest advantages? It's simple.
+    </p>
+
+    <div className="space-y-4 mb-4">
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Best Time</p>
+        <ul className="list-disc list-inside text-gray-800 space-y-1 ml-4">
+          <li>Early morning, on an empty stomach</li>
+          <li>Works well as part of a morning detox routine</li>
+        </ul>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Quantity</p>
+        <ul className="list-disc list-inside text-gray-800 space-y-1 ml-4">
+          <li>Start with 30 ml</li>
+          <li>Gradually increase if your body feels comfortable</li>
+        </ul>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Beginner Tips</p>
+        <ul className="list-disc list-inside text-gray-800 space-y-1 ml-4">
+          <li>Don't expect to love the taste immediately</li>
+          <li>Take it in one quick shot</li>
+          <li>Avoid mixing it with sugary juices</li>
+        </ul>
+      </div>
+    </div>
+
+    <p className="mb-4 text-gray-800 leading-relaxed italic font-medium text-emerald-700">
+      Consistency matters more than quantity. A small daily habit works better than occasional overload.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Who Should Actually Consider It?</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      Wheatgrass isn't limited to any one group. It fits naturally into different lifestyles:
+    </p>
+    <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
+      <li><strong className="text-emerald-700">Fitness enthusiasts</strong> – for recovery and energy balance</li>
+      <li><strong className="text-emerald-700">Working professionals</strong> – to support long, sedentary days</li>
+      <li><strong className="text-emerald-700">Students</strong> – for mental clarity and routine building</li>
+      <li><strong className="text-emerald-700">Anyone exploring natural health habits</strong> – making one better choice daily</li>
     </ul>
 
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Health Benefits</h3>
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Fresh Wheatgrass vs Powdered Versions</h3>
     <p className="mb-4 text-gray-800 leading-relaxed">
-      The combination of these nutrients provides numerous health benefits including detoxification, immune support, increased energy, and overall wellness enhancement.
+      This is where things get practical.
+    </p>
+
+    <div className="space-y-4 mb-4">
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Fresh Wheatgrass Juice</p>
+        <ul className="list-disc list-inside text-gray-800 space-y-1 ml-4">
+          <li>Higher nutrient retention</li>
+          <li>No processing</li>
+          <li>Better absorption</li>
+          <li>Short shelf life (which is actually a good sign)</li>
+        </ul>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Powdered Wheatgrass</p>
+        <ul className="list-disc list-inside text-gray-800 space-y-1 ml-4">
+          <li>Convenient and portable</li>
+          <li>Longer shelf life</li>
+          <li>Nutrient loss due to processing</li>
+        </ul>
+      </div>
+    </div>
+
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      If your goal is maximum benefit, fresh juice tends to be the preferred option.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Frequently Asked Questions</h3>
+    
+    <div className="space-y-4 mb-4">
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Can you drink wheatgrass shots daily?</p>
+        <p className="text-gray-800 leading-relaxed">
+          Yes, in moderate amounts. Daily consumption is generally safe for most people when taken in small quantities.
+        </p>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Are there any side effects?</p>
+        <p className="text-gray-800 leading-relaxed">
+          Some beginners may feel mild nausea initially due to detox effects. Starting small usually helps.
+        </p>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-emerald-700 mb-2">Does it help with weight loss?</p>
+        <p className="text-gray-800 leading-relaxed">
+          Not directly. But it supports digestion, metabolism and reduces cravings – factors that contribute to weight management.
+        </p>
+      </div>
+    </div>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">A Small Habit That Adds Up</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      Health doesn't always come from big changes. Sometimes, it comes from small, consistent actions. A daily wheatgrass shot isn't a radical transformation. It's a quiet shift towards better digestion, better energy, and a more aware lifestyle. And in a world full of complicated health advice, that simplicity matters.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Ready to Experience It for Yourself?</h3>
+    <p className="mb-4 text-gray-800 leading-relaxed">
+      If you're curious about adding wheatgrass shots to your routine, the easiest way to start is by trying it fresh and consistently. Connect with Xeda Farms and start ordering your daily wheatgrass shots because good health begins with small, natural choices.
     </p>
   </div>
 );
 
-const BlogContent3 = () => (
-  <div>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      There are many misconceptions about daily wheatgrass consumption. Let's clear the air and provide you with evidence-based information.
-    </p>
 
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Recommended Daily Intake</h3>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      For most adults, 30ml of fresh wheatgrass juice daily is an optimal amount. This provides significant nutritional benefits without overwhelming your system.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Common Myths Debunked</h3>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      <strong className="text-emerald-700">Myth 1:</strong> "More is always better" - Not true. Excessive consumption can cause nausea in some individuals. Stick to recommended amounts.
-    </p>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      <strong className="text-emerald-700">Myth 2:</strong> "It works instantly" - While some feel immediate energy, most benefits accumulate over time with consistent use.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Best Practices</h3>
-    <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
-      <li>Take on an empty stomach for better absorption</li>
-      <li>Start with smaller amounts if you're new to wheatgrass</li>
-      <li>Maintain consistency for best results</li>
-      <li>Listen to your body and adjust as needed</li>
-    </ul>
-  </div>
-);
-
-const BlogContent4 = () => (
-  <div>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      A strong immune system is your body's first line of defense against illness. Wheatgrass offers natural support to help keep your immune system functioning at its best.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Immune-Boosting Nutrients</h3>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      Wheatgrass is rich in vitamins and minerals that are essential for immune function, including vitamin C, vitamin A, and zinc.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">How It Works</h3>
-    <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
-      <li>Supports white blood cell production</li>
-      <li>Enhances antioxidant activity</li>
-      <li>Reduces inflammation</li>
-      <li>Promotes overall cellular health</li>
-    </ul>
-  </div>
-);
-
-const BlogContent5 = () => (
-  <div>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      Detoxification is a natural process that your body performs daily. Wheatgrass can enhance this process, helping your body eliminate toxins more effectively.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Natural Detoxification</h3>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      The high chlorophyll content in wheatgrass helps cleanse the blood and support liver function, your body's primary detox organ.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Benefits</h3>
-    <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
-      <li>Supports liver health</li>
-      <li>Cleanses the bloodstream</li>
-      <li>Removes heavy metals</li>
-      <li>Improves skin clarity</li>
-    </ul>
-  </div>
-);
-
-const BlogContent6 = () => (
-  <div>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      A healthy digestive system is crucial for overall wellness. Wheatgrass can play a significant role in supporting digestive health.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Digestive Support</h3>
-    <p className="mb-4 text-gray-800 leading-relaxed">
-      Wheatgrass contains enzymes that aid digestion and fiber that supports healthy gut bacteria.
-    </p>
-
-    <h3 className="text-2xl font-bold text-emerald-800 mt-8 mb-4">Key Benefits</h3>
-    <ul className="list-disc list-inside mb-4 text-gray-800 space-y-2 ml-4">
-      <li>Improves nutrient absorption</li>
-      <li>Supports healthy gut flora</li>
-      <li>Reduces bloating</li>
-      <li>Promotes regular digestion</li>
-    </ul>
-  </div>
-);
 
 // Blog data - in a real app, this would come from an API
 const blogData = {
@@ -180,7 +248,16 @@ const blogData = {
     date: "January 15, 2026",
     content: <BlogContent1 />,
   },
-
+  2: {
+    id: 2,
+    title: "Wheatgrass Shots Explained: Benefits, Usage & What You Should Know",
+    excerpt: "Discover what wheatgrass really is, its powerful health benefits, and how to incorporate it into your daily routine.",
+    image: blogImg2,
+    author: "Xeda Farm Team",
+    date: "January 20, 2026",
+    content: <BlogContent2 />,
+  },
+  
 };
 
 export default function BlogDetails() {
@@ -192,7 +269,7 @@ export default function BlogDetails() {
     return (
       <>
         <Header />
-        <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24 px-4 flex items-center justify-center">
+        <div className="bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24 px-4 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-emerald-900">Blog Not Found</h1>
             <button
@@ -211,7 +288,7 @@ export default function BlogDetails() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24">
+      <div className="bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Back Button */}
           <button
@@ -224,7 +301,7 @@ export default function BlogDetails() {
 
           {/* Featured Image */}
           {blog.image && (
-            <div className="mb-8 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="mb-8 rounded-2xl overflow-hidden shadow-2xl bg-white">
               <img
                 src={blog.image}
                 alt={blog.title}

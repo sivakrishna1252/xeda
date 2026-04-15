@@ -23,7 +23,7 @@ export default function Benefits() {
   return (
     <section
       id="benefits"
-      className="scroll-mt-10 min-h-screen py-24 px-4 bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800"
+      className="scroll-mt-10 min-h-screen py-24 px-4 bg-background text-gray-800"
     >
       {/* ===== Title Section ===== */}
       <div className="max-w-6xl mx-auto text-center mb-14">
@@ -125,7 +125,7 @@ function Card({ image, title, subtitle, items }) {
   return (
     <div
       tabIndex="0"
-      className="bg-white/95 backdrop-blur-md rounded-3xl shadow-lg overflow-hidden flex flex-col 
+      className="bg-background/95 backdrop-blur-md rounded-3xl shadow-lg overflow-hidden flex flex-col border-2 border-[#7ddf57]
                  transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl focus-visible:ring-4 focus-visible:ring-emerald-200 outline-none"
       role="region"
       aria-label={title}

@@ -4,7 +4,7 @@ export default function CTA({ onOpenModal }) {
   return (
     <section
       id="cta"
-      className="py-24 bg-gradient-to-b from-green-50 to-white text-center"
+      className="py-24 bg-background text-center"
       aria-label="Get in Touch Section"
     >
       <div className="max-w-3xl mx-auto px-6">

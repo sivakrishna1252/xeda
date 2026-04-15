@@ -269,7 +269,7 @@ export default function BlogDetails() {
     return (
       <>
         <Header />
-        <div className="bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24 px-4 flex items-center justify-center">
+        <div className="bg-background text-gray-800 pt-24 px-4 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-emerald-900">Blog Not Found</h1>
             <button
@@ -288,7 +288,7 @@ export default function BlogDetails() {
   return (
     <>
       <Header />
-      <div className="bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 text-gray-800 pt-24">
+      <div className="bg-background text-gray-800 pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Back Button */}
           <button

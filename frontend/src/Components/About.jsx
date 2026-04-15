@@ -3,7 +3,7 @@ import aboutImg from "../assets/About.webp";
 
 export default function About({ onOpenModal }) {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-green-50 to-white" aria-label="About Xeda Farm">
+    <section id="about" className="py-24 bg-background" aria-label="About Xeda Farm">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
@@ -14,7 +14,7 @@ export default function About({ onOpenModal }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border border-green-100 bg-white transform transition duration-500 hover:scale-105">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-[#7ddf57] bg-white transform transition duration-500 hover:scale-105">
               <img src={aboutImg} alt="Wheatgrass juice bottle - Xeda Farm" className="w-full h-[420px] object-cover" />
             </div>
           </div>

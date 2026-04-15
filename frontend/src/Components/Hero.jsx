@@ -55,7 +55,7 @@ export default function Hero({ onOpenModal }) {
                 className="h-full w-full object-cover object-center"
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60 sm:bg-black/50 md:bg-black/45 backdrop-brightness-75" />
+              <div className="absolute inset-0 bg-black/40 sm:bg-black/50 md:bg-black/45 backdrop-brightness-75" />
               {/* Text Content */}
               <div className="absolute inset-0 z-10 flex items-center justify-center text-center px-6">
                 <div className="max-w-3xl text-white animate-fadeInUp">

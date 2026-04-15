@@ -37,7 +37,7 @@ export default function Reviews() {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 overflow-hidden"
+      className="py-24 bg-background overflow-hidden"
       aria-labelledby="wheatgrass-reviews"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
@@ -82,7 +82,7 @@ export default function Reviews() {
               <SwiperSlide key={i} className="py-4 mb-4">
                 <div className="flex justify-center">
                   <div
-                    className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-green-100 
+                    className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg border-2 border-[#7ddf57] 
                                hover:shadow-md hover:scale-[1.03] transition-transform duration-300 
                                focus-within:ring-4 focus-within:ring-emerald-200 h-[380px] w-full max-w-sm 
                                flex flex-col items-center justify-between"

@@ -19,6 +19,11 @@ html{
   scroll-behavior: smooth;
 }
 
+body {
+  background: #ffffff; /* Global background color */
+  font-family: 'Inter', sans-serif; /* Global font family */
+}
+
 .btn-green {
   @apply inline-block px-8 py-3 rounded-full font-semibold text-white 
   bg-gradient-to-r from-green-500 to-green-600 

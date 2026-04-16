@@ -125,8 +125,8 @@ function Card({ image, title, subtitle, items }) {
   return (
     <div
       tabIndex="0"
-      className="bg-background/95 backdrop-blur-md rounded-3xl shadow-lg overflow-hidden flex flex-col border-2 border-[#7ddf57]
-                 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl focus-visible:ring-4 focus-visible:ring-emerald-200 outline-none"
+      className="bg-background/95 backdrop-blur-md rounded-3xl shadow-lg overflow-hidden flex flex-col border-2 border-emerald-900
+                 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl focus-visible:ring-4 focus-visible:ring-emerald-900 outline-none"
       role="region"
       aria-label={title}
     >
@@ -144,7 +144,7 @@ function Card({ image, title, subtitle, items }) {
       {/* ===== Content Section ===== */}
       <div className="flex flex-col flex-grow p-6">
         <div className="text-center mb-4">
-          <h3 className="text-xl md:text-2xl font-bold text-emerald-800 mb-1">
+          <h3 className="text-xl md:text-2xl font-bold text-emerald-900 mb-1">
             {title}
           </h3>
           <p className="text-sm text-gray-500">{subtitle}</p>

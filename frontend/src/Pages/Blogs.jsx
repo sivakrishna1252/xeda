@@ -9,6 +9,7 @@ import blogImg2 from "../assets/Blog/Blog (2).webp";
 const blogs = [
   {
     id: 1,
+    slug: "wheatgrass-for-muscle-recovery",
     title:
       "How Soon Can You See Muscle Recovery Benefits from 30 ml Fresh Wheatgrass Juice?",
     excerpt:
@@ -18,6 +19,7 @@ const blogs = [
   },
   {
     id: 2,
+    slug: "wheatgrass-juice-benefits-for-gym-muscle-recovery",
     title:
       "Wheatgrass Shots: Benefits, Detox & How to Use",
     excerpt:
@@ -31,8 +33,8 @@ const blogs = [
 export default function Blogs() {
   const navigate = useNavigate();
 
-  const handleBlogClick = (blogId) => {
-    navigate(`/blogs/${blogId}`);
+  const handleBlogClick = (blogSlug) => {
+    navigate(`/blogs/${blogSlug}`);
   };
 
   const isSingleBlog = blogs.length === 1;
@@ -65,7 +67,7 @@ export default function Blogs() {
             {blogs.map((blog) => (
               <div
                 key={blog.id}
-                onClick={() => handleBlogClick(blog.id)}
+                onClick={() => handleBlogClick(blog.slug)}
                 className={`cursor-pointer group bg-white/95 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-green-100 hover:border-green-400 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 hover:scale-[1.02] flex flex-col
                 ${isSingleBlog ? "max-w-md w-full" : ""}`}
               >

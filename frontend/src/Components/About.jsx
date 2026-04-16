@@ -14,7 +14,7 @@ export default function About({ onOpenModal }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-[#7ddf57] bg-white transform transition duration-500 hover:scale-105">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-emerald-900 bg-white transform transition duration-500 hover:scale-105">
               <img src={aboutImg} alt="Wheatgrass juice bottle - Xeda Farm" className="w-full h-[420px] object-cover" />
             </div>
           </div>
@@ -29,7 +29,7 @@ export default function About({ onOpenModal }) {
 
             <div className="flex justify-center md:justify-start pt-4">
               <button onClick={onOpenModal} className="btn-green">
-          Shop now
+         Book now
         </button>
             </div>
 

@@ -241,6 +241,7 @@ const BlogContent2 = () => (
 const blogData = {
   1: {
     id: 1,
+    slug: "wheatgrass-for-muscle-recovery",
     title: "How Soon Can You See Muscle Recovery Benefits from 30 ml Fresh Wheatgrass Juice?",
     excerpt: "Learn how 30 ml fresh wheatgrass juice supports muscle recovery, energy, and strength over time.",
     image: blogImg,
@@ -250,6 +251,7 @@ const blogData = {
   },
   2: {
     id: 2,
+    slug: "wheatgrass-juice-benefits-for-gym-muscle-recovery",
     title: "Wheatgrass Shots Explained: Benefits, Usage & What You Should Know",
     excerpt: "Discover what wheatgrass really is, its powerful health benefits, and how to incorporate it into your daily routine.",
     image: blogImg2,
@@ -263,7 +265,7 @@ const blogData = {
 export default function BlogDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const blog = blogData[parseInt(id)];
+  const blog = Object.values(blogData).find((item) => item.slug === id);
 
   if (!blog) {
     return (

@@ -76,16 +76,16 @@ export default function Reviews() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="pb-16"
+            className="pb-16 px-4"
           >
             {testimonials.map((t, i) => (
-              <SwiperSlide key={i} className="py-4 mb-4">
+              <SwiperSlide key={i} className="py-2 mb-4">
                 <div className="flex justify-center">
                   <div
-                    className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg border-2 border-[#7ddf57] 
+                    className="bg-white/90 backdrop-blur-sm rounded-3xl px-6 py-6 shadow-lg border-2 border-emerald-900 mx-2
                                hover:shadow-md hover:scale-[1.03] transition-transform duration-300 
-                               focus-within:ring-4 focus-within:ring-emerald-200 h-[380px] w-full max-w-sm 
-                               flex flex-col items-center justify-between"
+                               focus-within:ring-4 focus-within:ring-emerald-200 h-[440px] w-full max-w-sm 
+                               flex flex-col items-center gap-4"
                     role="group"
                     aria-label={`Testimonial by ${t.name}`}
                     tabIndex="0"
@@ -93,17 +93,19 @@ export default function Reviews() {
                     <img
                       src={t.avatar}
                       alt={`${t.name} from ${t.location}`}
-                      className="w-20 h-20 rounded-full border-4 border-green-400 shadow-md object-cover mb-4"
+                      className="w-20 h-20 rounded-full border-4 border-green-400 shadow-md object-cover mb-2"
                       loading="lazy"
                     />
-                    <p className="text-gray-800 text-base text-md leading-relaxed italic mb-4">
+                    <p className="text-gray-800 text-base md:text-base leading-relaxed italic text-center max-w-[88%] mx-auto mb-2">
                       "{t.text}"
                     </p>
-                    <div>
-                      <h4 className="font-semibold text-emerald-800 text-lg">
+                    <div className="mt-auto w-full border-t border-emerald-100 pt-3 pb-2 px-2 text-center">
+                      <h4 className="font-semibold text-emerald-800 text-lg leading-tight">
                         {t.name}
                       </h4>
-                      <p className="text-gray-600 text-base md:text-lg">{t.location}</p>
+                      <p className="text-gray-600 text-sm md:text-[15px] mt-1.5 leading-snug">
+                        {t.location}
+                      </p>
                     </div>
                   </div>
                 </div>

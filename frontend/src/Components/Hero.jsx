@@ -1,8 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import bg1 from "../assets/Bg1.webp";
 import bg2 from "../assets/Bg2.webp";
@@ -12,18 +11,21 @@ export default function Hero({ onOpenModal }) {
   const slides = [
     {
       image: bg1,
+      fallbackImage: "/Xeda1.jpg",
       title: "Pure Wheatgrass, Pure Energy",
       desc: "Start your mornings with a burst of natural vitality — cold-pressed, pure, and nutrient-rich.",
       buttons: [{ text: "Order Now", href: "#shop" }],
     },
     {
       image: bg2,
+      fallbackImage: "/Xeda1.jpg",
       title: "Nurtured by Nature, Crafted for You",
       desc: "From seed to sip — we ensure every drop delivers sustainable wellness from farm to bottle.",
       buttons: [{ text: "Know Us", href: "#about" }],
     },
     {
       image: bg3,
+      fallbackImage: "/Xeda1.jpg",
       title: "Elevate Your Everyday Wellness",
       desc: "Fuel your day with chlorophyll, enzymes, and antioxidants — the natural reset your body deserves.",
       buttons: [{ text: "See Benefits", href: "#benefits" }],
@@ -37,25 +39,32 @@ export default function Hero({ onOpenModal }) {
       aria-label="Xeda Farm Hero Section"
     >
       <Swiper
-        modules={[Autoplay, EffectFade, Pagination]}
-        effect="fade"
+        modules={[Autoplay, Pagination]}
         speed={1200}
         autoplay={{ delay: 4500, disableOnInteraction: true }}
         loop
         pagination={{ clickable: true }}
-        className="h-full"
+        className="h-full w-full"
+        style={{ width: "100%", height: "100%" }}
       >
         {slides.map((slide, idx) => (
-          <SwiperSlide key={idx}>
-            <div className="relative h-full w-full">
-             // Background Image
+          <SwiperSlide key={idx} style={{ width: "100%", height: "100%" }}>
+            <div className="relative w-full h-full flex items-center justify-center">
               <img
                 src={slide.image}
-                alt={slide.title}
-                className="h-full w-full object-cover object-center"
+                alt=""
+                aria-hidden="true"
+                loading={idx === 0 ? "eager" : "lazy"}
+                fetchPriority={idx === 0 ? "high" : "auto"}
+                onError={(e) => {
+                  if (e.currentTarget.src !== window.location.origin + slide.fallbackImage) {
+                    e.currentTarget.src = slide.fallbackImage;
+                  }
+                }}
+                className="absolute inset-0 h-full w-full object-cover object-center z-0"
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black sm:bg-black/50 md:bg-black/45 backdrop-brightness-90" />
+              <div className="absolute inset-0 bg-black/50 sm:bg-black/50 md:bg-black/45 z-[1]" />
               {/* Text Content */}
               <div className="absolute inset-0 z-10 flex items-center justify-center text-center px-6">
                 <div className="max-w-3xl text-white animate-fadeInUp">
@@ -115,6 +124,15 @@ export default function Hero({ onOpenModal }) {
       </Swiper>
 
       <style>{`
+        .swiper-wrapper {
+          width: 100% !important;
+          height: 100% !important;
+        }
+        .swiper-slide {
+          width: 100% !important;
+          height: 100% !important;
+          display: flex !important;
+        }
         .swiper-pagination {
           bottom: 25px !important;
         }

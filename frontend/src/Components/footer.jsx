@@ -4,6 +4,7 @@ import {
   FaFacebook,
   FaLinkedin,
   FaYoutube,
+  FaTwitter,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
@@ -134,6 +135,21 @@ export default function Footer() {
                              hover:scale-110 hover:shadow-lg hover:shadow-blue-600/30"
                 >
                   <FaLinkedin className="w-5 h-5" />
+                </a>
+
+                {/* X / Twitter */}
+                <a
+                  href="https://x.com/XedaFarm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                  className="w-10 h-10 rounded-full bg-gray-800/50
+                             hover:bg-sky-500 text-gray-300 hover:text-white
+                             flex items-center justify-center
+                             transition-all duration-300
+                             hover:scale-110 hover:shadow-lg hover:shadow-sky-500/30"
+                >
+                  <FaTwitter className="w-5 h-5" />
                 </a>
 
                 {/* YouTube */}

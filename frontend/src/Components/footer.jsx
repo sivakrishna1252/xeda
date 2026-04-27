@@ -4,12 +4,12 @@ import {
   FaFacebook,
   FaLinkedin,
   FaYoutube,
-  FaTwitter,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
   FaWhatsapp,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import logo from "../assets/xeda logo.webp";
 
 export default function Footer() {
@@ -149,7 +149,7 @@ export default function Footer() {
                              transition-all duration-300
                              hover:scale-110 hover:shadow-lg hover:shadow-sky-500/30"
                 >
-                  <FaTwitter className="w-5 h-5" />
+                  <FaXTwitter className="w-5 h-5" />
                 </a>
 
                 {/* YouTube */}

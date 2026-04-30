@@ -5,7 +5,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/footer";
 import blogImg from "../assets/Blog/Blog1.webp";
 import blogImg2 from "../assets/Blog/Blog (2).webp";
-
+import blogImg3 from "../assets/Blog/blog3.png";
 const blogs = [
   {
     id: 1,
@@ -26,6 +26,16 @@ const blogs = [
       "Discover wheatgrass shots, their detox benefits, glowing skin effects, and how to use them daily for natural energy and inner recovery.",
     image: blogImg2,
     date: "April 06, 2026",
+  },
+
+  {
+    id: 3,
+    slug: "wheatgrass-shots-immunity-real-use-in-fitness-spaces",
+    title: "Wheatgrass Shots for Immunity | Use Cases, Research & Why Fitness Spaces Use them.  ",
+    excerpt:
+      "Explore real use cases of wheatgrass shots, research-backed insights, and why gyms and wellness centres are adding them as part of daily routines. ",
+    image: blogImg3,
+    date: "April 29, 2026",
   },
   // Future blogs will be added here
 ];

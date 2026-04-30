@@ -5,7 +5,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/footer";
 import blogImg from "../assets/Blog/B1.webp";
 import blogImg2 from "../assets/Blog/Blog(2).webp";
-
+import blogImg3 from "../assets/Blog/Blog 3.jpg";
 // Blog Content Components
 const BlogContent1 = () => (
   <div>
@@ -234,7 +234,228 @@ const BlogContent2 = () => (
     </p>
   </div>
 );
+const BlogContent3 = () => (
+  <div>
 
+    <h2 className="text-3xl font-bold text-emerald-900 mb-6">
+      Wheatgrass Shots and Immunity: Beyond the Basics
+    </h2>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      Wheatgrass Isn’t New – But Its Use Has Changed
+    </h3>
+
+    <p className="mb-4">
+      Wheatgrass has been studied for years, not as a trend, but as a nutrient-dense plant (Triticum aestivum).
+    </p>
+
+    <p className="font-semibold">Research highlights:</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>High chlorophyll content</li>
+      <li>Presence of essential amino acids</li>
+      <li>Antioxidant compounds linked to cellular protection</li>
+    </ul>
+
+    <p className="mb-4">
+      What’s changed today is not the ingredient – it's how it’s being used in real environments like gyms and wellness centres.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      What Research Actually Points Toward
+    </h3>
+
+    <p className="mb-4">
+      Instead of exaggerated claims, studies consistently show wheatgrass supports the following:
+    </p>
+
+    <p className="font-semibold">1. Oxidative Stress Reduction</p>
+    <p className="mb-3">
+      Antioxidants in wheatgrass help reduce oxidative stress, which is linked to fatigue and slower recovery.
+    </p>
+
+    <p className="font-semibold">2. Blood Health Support</p>
+    <p className="mb-3">
+      Some studies indicate improved haemoglobin levels and better oxygen-carrying capacity.
+    </p>
+
+    <p className="font-semibold">3. Nutrient Absorption & Gut Support</p>
+    <p className="mb-4">
+      Wheatgrass contains enzymes that may support digestion and nutrient uptake.
+    </p>
+
+    <p className="mb-4">
+      These are not “instant effects". They are support functions that work over time.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      Where Wheatgrass Shots Actually Add Value (Real Use Cases)
+    </h3>
+
+    <p className="mb-4">
+      This is where most content fails – it doesn’t show how it’s used.
+    </p>
+
+    <p className="mb-4">
+      Here’s where wheatgrass shots fit practically:
+    </p>
+
+    <p className="font-semibold">1. Post-Workout Recovery Point</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Quick intake after training</li>
+      <li>Supports recovery process</li>
+      <li>Doesn’t feel heavy or time-consuming</li>
+    </ul>
+
+    <p className="font-semibold">2. Morning Activation Routine</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Used at entry points in fitness spaces</li>
+      <li>Creates a structured start</li>
+      <li>Encourages daily consistency</li>
+    </ul>
+
+    <p className="font-semibold">3. Early Reset (Wellness Centers)</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Short sessions or morning breaks</li>
+      <li>Helps maintain energy without caffeine dependency</li>
+    </ul>
+
+    <p className="font-semibold">4. Add-On to Structured Programs</p>
+    <ul className="list-disc ml-6 mb-6">
+      <li>Detox programs</li>
+      <li>Weight management routines</li>
+      <li>Lifestyle correction plans</li>
+    </ul>
+
+    {/* TABLE */}
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-4">
+      Quick Comparison: Why Wheatgrass Shots Work in Spaces
+    </h3>
+
+    <div className="overflow-x-auto mb-6">
+      <table className="w-full border border-gray-300 text-left">
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="p-3 border">Factor</th>
+            <th className="p-3 border">Traditional Supplements</th>
+            <th className="p-3 border">Wheatgrass Shots</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="p-3 border">Time to consume</td>
+            <td className="p-3 border">High</td>
+            <td className="p-3 border">Low</td>
+          </tr>
+          <tr>
+            <td className="p-3 border">Routine fit</td>
+            <td className="p-3 border">Inconsistent</td>
+            <td className="p-3 border">Easy</td>
+          </tr>
+          <tr>
+            <td className="p-3 border">Perceived value</td>
+            <td className="p-3 border">Low visibility</td>
+            <td className="p-3 border">High visibility</td>
+          </tr>
+          <tr>
+            <td className="p-3 border">Repeat usage</td>
+            <td className="p-3 border">Irregular</td>
+            <td className="p-3 border">Daily habit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      Simple Integration Flow (For Gyms & Wellness Spaces)
+    </h3>
+
+    <p className="mb-4">
+      ➡ Member walks in ➡ Session / workout ➡ Offered wheatgrass shot ➡ Completes routine ➡ Returns next day
+    </p>
+
+    <p className="mb-4">
+      This is not about selling a product. It’s about creating a repeatable experience loop.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      What Makes Xeda Farms Wheatgrass Shots Different
+    </h3>
+
+    <p className="mb-4">
+      This is where most brands sound the same – Xeda doesn’t.
+    </p>
+
+    <p className="font-semibold">Locally Grown, Not Mass Sourced</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Grown in controlled environments</li>
+      <li>Freshly harvested</li>
+      <li>Not stored or shipped long distances</li>
+    </ul>
+
+    <p className="mb-4">This directly impacts:</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Freshness</li>
+      <li>Nutrient retention</li>
+      <li>Taste and usability</li>
+    </ul>
+
+    <p className="font-semibold">Designed for Real Use, Not Just Claims</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Ready-to-consume format</li>
+      <li>No preparation needed</li>
+      <li>Built for fast-paced environments</li>
+    </ul>
+
+    <p className="font-semibold">Built for Fitness & Wellness Spaces</p>
+    <ul className="list-disc ml-6 mb-4">
+      <li>Daily usability</li>
+      <li>Operational ease</li>
+      <li>Repeat consumption</li>
+    </ul>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      Why This Matters for Gyms and Wellness Centers
+    </h3>
+
+    <ul className="list-disc ml-6 mb-4">
+      <li>Extends the member journey</li>
+      <li>Adds perceived value</li>
+      <li>Encourages daily visits</li>
+      <li>Differentiates the space</li>
+    </ul>
+
+    <p className="mb-4">
+      This is especially relevant in high-density fitness zones where users expect more than just workouts.
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      Key Takeaway
+    </h3>
+
+    <p className="mb-4">
+      Wheatgrass shots are not about hype. They are about placement, usability, and consistency.
+    </p>
+
+    <ul className="list-disc ml-6 mb-4">
+      <li>Backed by real research</li>
+      <li>Integrated into real routines</li>
+      <li>Delivered in a usable format</li>
+    </ul>
+
+    <p className="mb-4">
+      They move from “health trend” to “daily habit".
+    </p>
+
+    <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
+      Closing
+    </h3>
+
+    <p className="mb-4">
+      Xeda Farms wheatgrass shots are built around this exact idea. Fresh and locally grown in Kharadi, Pune, and designed to fit into real-world routines across gyms and wellness centres.
+    </p>
+
+  </div>
+);
 
 
 // Blog data - in a real app, this would come from an API
@@ -259,7 +480,17 @@ const blogData = {
     date: "January 20, 2026",
     content: <BlogContent2 />,
   },
-  
+  3: {
+    id: 3,
+    slug: "wheatgrass-shots-immunity-real-use-in-fitness-spaces",
+    title: "Wheatgrass Shots for Immunity | Use Cases, Research & Why Fitness Spaces Use them. ",
+    excerpt:
+      "Explore real use cases of wheatgrass shots, research-backed insights, and why gyms and wellness centres are adding them as part of daily routines. ",
+    image: blogImg3,
+    author: "Xeda Farm Team",
+    date: "April 29, 2026",
+    content: <BlogContent3 />,
+  },
 };
 
 export default function BlogDetails() {

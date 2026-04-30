@@ -248,7 +248,7 @@ const BlogContent3 = () => (
     <p className="mb-4">
   Wheatgrass has been studied for years, not as a trend, but as a nutrient-dense plant (
   <a
-    href="https://en.wikipedia.org/wiki/Wheatgrass"
+    href="https://en.wikipedia.org/wiki/Common_wheat"
     target="_blank"
     rel="noopener noreferrer"
     className="text-emerald-700 underline hover:text-emerald-900"
@@ -282,7 +282,7 @@ const BlogContent3 = () => (
     <p className="mb-3">
   Antioxidants in wheatgrass help reduce oxidative stress, which is linked to fatigue and slower{" "}
   <a
-    href="https://en.wikipedia.org/wiki/Muscle_recovery"
+    href="https://www.xedafarm.com/blogs/wheatgrass-for-muscle-recovery"
     target="_blank"
     rel="noopener noreferrer"
     className="text-emerald-700 underline hover:text-emerald-900"
@@ -385,7 +385,7 @@ const BlogContent3 = () => (
     <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
   Simple Integration Flow{" "}
   <a
-    href="https://en.wikipedia.org/wiki/Health_club"
+    href="https://www.xedafarm.com/blogs/wheatgrass-juice-benefits-for-gym-muscle-recovery"
     target="_blank"
     rel="noopener noreferrer"
     className="text-emerald-700 underline hover:text-emerald-900 font-medium"
@@ -434,7 +434,7 @@ const BlogContent3 = () => (
     <p className="font-semibold">Built for Fitness & Wellness Spaces</p>
     <p className="mb-2">
   <a
-    href="https://xedafarms.com"
+    href="https://www.xedafarm.com/#about"
     target="_blank"
     rel="noopener noreferrer"
     className="text-emerald-700 underline hover:text-emerald-900 font-medium"

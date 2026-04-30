@@ -242,12 +242,22 @@ const BlogContent3 = () => (
     </h2>
 
     <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
-      Wheatgrass Isn’t New – But Its Use Has Changed
+      Wheatgrass Isn’t New But Its Use Has Changed
     </h3>
 
     <p className="mb-4">
-      Wheatgrass has been studied for years, not as a trend, but as a nutrient-dense plant (Triticum aestivum).
-    </p>
+  Wheatgrass has been studied for years, not as a trend, but as a nutrient-dense plant (
+  <a
+    href="https://en.wikipedia.org/wiki/Wheatgrass"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-emerald-700 underline hover:text-emerald-900"
+  >
+    
+    Triticum aestivum
+  </a>
+  ).
+</p>
 
     <p className="font-semibold">Research highlights:</p>
     <ul className="list-disc ml-6 mb-4">
@@ -270,9 +280,16 @@ const BlogContent3 = () => (
 
     <p className="font-semibold">1. Oxidative Stress Reduction</p>
     <p className="mb-3">
-      Antioxidants in wheatgrass help reduce oxidative stress, which is linked to fatigue and slower recovery.
-    </p>
-
+  Antioxidants in wheatgrass help reduce oxidative stress, which is linked to fatigue and slower{" "}
+  <a
+    href="https://en.wikipedia.org/wiki/Muscle_recovery"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-emerald-700 underline hover:text-emerald-900"
+  >
+    recovery
+  </a>.
+</p>
     <p className="font-semibold">2. Blood Health Support</p>
     <p className="mb-3">
       Some studies indicate improved haemoglobin levels and better oxygen-carrying capacity.
@@ -366,8 +383,16 @@ const BlogContent3 = () => (
     </div>
 
     <h3 className="text-2xl font-bold text-emerald-800 mt-6 mb-3">
-      Simple Integration Flow (For Gyms & Wellness Spaces)
-    </h3>
+  Simple Integration Flow{" "}
+  <a
+    href="https://en.wikipedia.org/wiki/Health_club"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-emerald-700 underline hover:text-emerald-900 font-medium"
+  >
+    (For Gyms & Wellness Spaces)
+  </a>
+</h3>
 
     <p className="mb-4">
       ➡ Member walks in ➡ Session / workout ➡ Offered wheatgrass shot ➡ Completes routine ➡ Returns next day
@@ -382,7 +407,7 @@ const BlogContent3 = () => (
     </h3>
 
     <p className="mb-4">
-      This is where most brands sound the same – Xeda doesn’t.
+      This is where most brands sound the same Xeda doesn’t.
     </p>
 
     <p className="font-semibold">Locally Grown, Not Mass Sourced</p>
@@ -407,6 +432,17 @@ const BlogContent3 = () => (
     </ul>
 
     <p className="font-semibold">Built for Fitness & Wellness Spaces</p>
+    <p className="mb-2">
+  <a
+    href="https://xedafarms.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-emerald-700 underline hover:text-emerald-900 font-medium"
+  >
+    Xeda Farms
+  </a>{" "}
+  focuses on:
+</p>
     <ul className="list-disc ml-6 mb-4">
       <li>Daily usability</li>
       <li>Operational ease</li>

@@ -44,7 +44,7 @@ export default function Hero({ onOpenModal }) {
         autoplay={{ delay: 4500, disableOnInteraction: true }}
         loop
         pagination={{ clickable: true }}
-        className="h-full w-full"
+        className="hero-swiper h-full w-full"
         style={{ width: "100%", height: "100%" }}
       >
         {slides.map((slide, idx) => (
@@ -124,23 +124,24 @@ export default function Hero({ onOpenModal }) {
       </Swiper>
 
       <style>{`
-        .swiper-wrapper {
+        /* Scoped to hero only — unscoped .swiper-slide broke other Swipers (e.g. testimonials). */
+        .hero-swiper .swiper-wrapper {
           width: 100% !important;
           height: 100% !important;
         }
-        .swiper-slide {
+        .hero-swiper .swiper-slide {
           width: 100% !important;
           height: 100% !important;
           display: flex !important;
         }
-        .swiper-pagination {
+        .hero-swiper .swiper-pagination {
           bottom: 25px !important;
         }
-        .swiper-pagination-bullet {
+        .hero-swiper .swiper-pagination-bullet {
           background: #86efac; /* green-300 */
           opacity: 0.7;
         }
-        .swiper-pagination-bullet-active {
+        .hero-swiper .swiper-pagination-bullet-active {
           background: #16a34a; /* green-600 */
           opacity: 1;
         }

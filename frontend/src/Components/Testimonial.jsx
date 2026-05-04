@@ -58,9 +58,10 @@ export default function Reviews() {
         </p>
 
         {/* Swiper Carousel */}
-        <div className="relative">
+        <div className="relative w-full">
           <Swiper
             modules={[Autoplay, Pagination]}
+            slidesPerView={1}
             autoplay={{
               delay: 3500,
               disableOnInteraction: false,
@@ -72,11 +73,10 @@ export default function Reviews() {
             grabCursor={true}
             spaceBetween={30}
             breakpoints={{
-              640: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="pb-16 px-4"
+            className="testimonials-swiper pb-16 px-4 w-full"
           >
             {testimonials.map((t, i) => (
               <SwiperSlide key={i} className="py-2 mb-4">
@@ -115,20 +115,20 @@ export default function Reviews() {
 
           {/* Custom Pagination Styling */}
           <style>{`
-            .swiper-pagination {
+            .testimonials-swiper .swiper-pagination {
               position: absolute;
-              bottom: 0px !important; 
+              bottom: 0px !important;
               left: 0;
               width: 100%;
             }
-            .swiper-pagination-bullet {
+            .testimonials-swiper .swiper-pagination-bullet {
               background: #86efac; /* green-300 */
               opacity: 0.6;
               width: 10px;
               height: 10px;
               transition: all 0.3s ease;
             }
-            .swiper-pagination-bullet-active {
+            .testimonials-swiper .swiper-pagination-bullet-active {
               background: #16a34a; /* green-600 */
               opacity: 1;
               transform: scale(1.2);

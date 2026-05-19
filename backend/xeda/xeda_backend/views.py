@@ -1,20 +1,21 @@
 from django.core.mail import send_mail
 from django.conf import settings
-from rest_framework import viewsets, status
+from rest_framework import mixins, status, viewsets
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from .models import Contact
 from .serializers import ContactSerializer
 
 
-class ContactViewSet(viewsets.ModelViewSet):
+class ContactViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
-    API endpoint for Purchase Enquiry/Contact form
-    - POST: Submit a new enquiry
-    - GET: List all enquiries
+    Public API for purchase enquiries — POST only.
+    View submissions in Django admin (/admin/), not via this endpoint.
     """
-    queryset = Contact.objects.all().order_by('-created_at')
+    queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    
+    permission_classes = [AllowAny]
+
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
@@ -60,7 +61,6 @@ This is an automated email from Xeda Purchase Enquiry System.
                 {
                     'success': True,
                     'message': 'Enquiry submitted successfully!',
-                    'data': serializer.data
                 },
                 status=status.HTTP_201_CREATED
             )
